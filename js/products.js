@@ -8,12 +8,12 @@ function showProductsList(array){
     let contenido = "";
     for(let i = 0; i < array.length; i++){
         let category = array[i];
-        contenido += category.name + '<br>';
-        contenido += category.description + '<br>';
-        contenido += category.cost;
+        contenido += 'Nombre' + category.name + '<br>';
+        contenido += 'Descripción' + category.description + '<br>';
+        contenido += 'Precio' + category.cost;
         contenido += '<br><hr><br>';
 
-        document.getElementById('container p-5').innerHTML = contenido;
+        document.getElementsByClassName("container p-5").innerHTML = contenido;
         }
     } 
 
@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showProductsList(productsArray);
         }
 
-});
+    }); 
 });
