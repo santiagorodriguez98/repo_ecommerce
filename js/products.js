@@ -14,8 +14,8 @@ function showProductsList(array){
         contenido += '<br><hr><br>';
 
         document.getElementsByClassName("container p-5").innerHTML = contenido;
-        }
-    } 
+    }
+} 
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
