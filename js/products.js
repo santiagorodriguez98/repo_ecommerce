@@ -8,12 +8,14 @@ function showProductsList(array){
     let contenido = "";
     for(let i = 0; i < array.length; i++){
         let category = array[i];
-        contenido += 'Nombre' + category.name + '<br>';
-        contenido += 'Descripción' + category.description + '<br>';
-        contenido += 'Precio' + category.cost;
+         
+        contenido += category.name + '<br>' ;
+        contenido +=  "<img src=" + category.imgSrc +"><br>";
+        contenido += 'Descripción: ' + category.description + '<br>';
+        contenido += 'Precio: ' + category.cost;
         contenido += '<br><hr><br>';
-
-        document.getElementsById("divId").innerHTML = contenido;
+        
+        document.getElementById("divId").innerHTML = contenido;
     }
 } 
 
