@@ -13,7 +13,7 @@ function showProductsList(array){
         contenido += 'Precio' + category.cost;
         contenido += '<br><hr><br>';
 
-        document.getElementsByClassName("container p-5").innerHTML = contenido;
+        document.getElementsById("divId").innerHTML = contenido;
     }
 } 
 
