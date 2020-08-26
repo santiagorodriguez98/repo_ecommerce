@@ -40,8 +40,26 @@ var getJSONData = function(url){
     });
 }
 
+document.addEventListener("DOMContentLoaded", function(e){
+
+    let userLogged = localStorage.getItem('User-Logged');
+    let infoUser = document.getElementById("info-user");
+    let user = document.getElementById("user");
+
+    if (userLogged) {
+      userLogged = JSON.parse(userLogged);
+      user.innerText = user.innerText + "Estas logueado como: " + userLogged.email;
+      infoUser.style = "display: inline-block";  
+
+    }
+    document.getElementById("exit").addEventListener("click",function (){
+      localStorage.removeItem('User-Logged');
+      window.location = "index.html";
+      });
+});
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("click", function(e){
+
 });

@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
             alert("Debe completar sus datos primero");
         }
         if (camposCompletos) {
+            localStorage.setItem('User-Logged', JSON.stringify({email: emailId.value}));
             window.location ='Inicio.html';
 
 
         }
+        
     })
 });
