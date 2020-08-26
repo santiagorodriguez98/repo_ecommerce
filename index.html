@@ -19,49 +19,55 @@
     }
 
     body {
-    background-image: url('img/login.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-      display: -ms-flexbox;
+      background-color: rgb(245, 245, 245);
+    display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
       align-items: center;
       padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: none;
+      
+     
     }
     h2,h4 {
       color: black;
       font-family: 'Gill Sans MT';
       font-weight: bold;
-      font-size: 25px;
+      font-size: 20px;
       text-align: center;
+   
 
     }
-     .error {
-       background-color: red;
-     }
-    .signin {
-      background-color:rgba(184, 58, 106, 0.719);
-      border: 4px solid rgb(184, 58, 106);
-      width: 50%;
-      padding: 15px;
-      margin: auto;
+    .emailClass.passwordClass{
+      width: 20em;
+    }
+    #buttonId{
+      
+      padding-bottom: 10px;
+    }
+    .imgClass{
+      width: 30%;
+      
+      
+    }
+    .signin{
+      align-items: center;
+      text-align: center;
     }
   </style>
 </head>
 
 <body class="text-center">
   <div class="signin">
+    <pre>
+    <img src="img/login.png" class= "imgClass">
+
     <h2>Bienvenido, por favor ingresa los datos a continuación
     </h2> 
-    
-      <input type="email" id = "emailId" placeholder="Escribe tu email"><br><br>
-      <input type="password" id = "passwordId" placeholder="Escribe tu contraseña"><br><br>
+      <input type="email" id = "emailId" class="emailClass" placeholder="Escribe tu email"><br><br>
+      <input type="password" id = "passwordId" class="passwordClass" placeholder="Escribe tu contraseña"><br><br>
       <button type="submit" id = "buttonId">Loguearme</button><br>
-
       <h4>Te deseamos la mejor experiencia en nuestro sitio web</h4>
+    </pre>
   </div>
 
 
