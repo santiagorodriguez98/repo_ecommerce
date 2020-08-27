@@ -4,6 +4,9 @@
 var productsArray = [];
 var maxPrice = undefined;
 var minPrice = undefined;
+const SORT_ASC = "asc-price"
+const SORT_DESC = "desc-price"
+const SORT_DESC_REL = "RELEV"
 
 function showProductsList(array) {
 
@@ -23,6 +26,23 @@ function showProductsList(array) {
             contenido += '<br><hr><br>';
         }
         document.getElementById("divId").innerHTML = contenido;
+    }
+}
+
+function sortProducts (criterio, array){
+    let sortList = [];
+
+    if (criterio === SORT_ASC){
+        sortList = array.sort(function (a,b){
+        if (a.cost > b.cost){
+            return -1;
+        }
+        if (a.cost < b.cost){
+            return 1;
+        }
+
+        return 0;
+        })
     }
 }
 
@@ -57,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         document.getElementById("minPrice").value = "";
         maxPrice = undefined;
         minPrice = undefined;
-        
+
         showProductsList(productsArray);
     });
 });
