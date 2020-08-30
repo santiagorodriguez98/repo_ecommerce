@@ -29,27 +29,57 @@ function showProductsList(array) {
     }
 }
 
-function sortProducts (criterio, array){
+function sortProducts(criterio, array) {
     let sortList = [];
 
-    if (criterio === SORT_ASC){
-        sortList = array.sort(function (a,b){
-        if (a.cost > b.cost){
-            return -1;
-        }
-        if (a.cost < b.cost){
-            return 1;
-        }
+    if (criterio === SORT_ASC) {
+        sortList = array.sort(function (a, b) {
+            if (a.cost > b.cost) {
+                return 1;
+            }
+            if (a.cost < b.cost) {
+                return -1;
+            }
 
-        return 0;
-        })
+            return 0;
+
+        });
+        return sortList;
     }
+    else if (criterio === SORT_DESC) {
+        sortList = array.sort(function (a, b) {
+            if (a.cost > b.cost) {
+                return -1;
+            }
+            if (a.cost < b.cost) {
+                return 1;
+            }
+
+            return 0;
+        });
+        return sortList;
+    }
+    else if (criterio === SORT_DESC_REL) {
+        sortList = array.sort(function (a, b) {
+            if (a.soldCount > b.soldCount) {
+                return -1;
+            }
+            if (a.soldCount < b.soldCount) {
+                return 1;
+            }
+
+            return 0;
+        });
+        return sortList;
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             productsArray = resultObj.data;
+            productsArray = sortProducts(SORT_ASC, productsArray);
             showProductsList(productsArray);
         }
 
@@ -78,6 +108,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
         maxPrice = undefined;
         minPrice = undefined;
 
+        showProductsList(productsArray);
+    });
+    document.getElementById("asc").addEventListener("click", function () {
+        productsArray = sortProducts(SORT_ASC, productsArray);
+        showProductsList(productsArray);
+    });
+    document.getElementById("desc").addEventListener("click", function () {
+        productsArray = sortProducts(SORT_DESC, productsArray);
+        showProductsList(productsArray);
+    });
+    document.getElementById("relev").addEventListener("click", function () {
+       productsArray = sortProducts(SORT_DESC_REL, productsArray);
         showProductsList(productsArray);
     });
 });

@@ -29,18 +29,25 @@
       </div>
       </div>
     </nav>
-    <div id = "tools">
-      <h3>Filtrar por precio</h3>
-      <label for="maxPrice"></label>
-      <input id = "maxPrice" type="number" placeholder="max">
+    <style>
+      #filterTool{
+        border-left: 2px solid black;
+        float: right;}
+        p, input, button{margin-left: 5px;
+        margin-right: 20px;}
+      </style>
+    <div id = "filterTool">
+      <p>Filtrar por precio</p>
       <label for="minPrice"></label>
-      <input id = "minPrice" type="number" placeholder="min"><br><br>
+      <input id = "minPrice" type="number" placeholder="desde" step="5"><br><br>
+      <label for="maxPrice"></label>
+      <input id = "maxPrice" type="number" placeholder="hasta"><br><br>
       <button id = "Filter">Filtrar</button>
-      <button id = "clean">Limpiar</button>
-      <h3>Ordenar por precio</h3><br>
+      <button id = "clean">Limpiar</button><br><br>
+      <p>Ordenar por precio</p>
       <button id = "asc">Ascen</button>
-      <button id = desc>Descen</button><br>
-      <h3>Ordenar por relevancia</h3><br>
+      <button id = desc>Descen</button><br><br>
+      <p>Ordenar por relevancia</p>
       <button id = "relev">Descendente</button>
     </div>
     <div class="container p-5" id = "divId">
