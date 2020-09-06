@@ -129,6 +129,8 @@ footer p {
   z-index: 1021;
   display: none;
 }
+a.link {font-size: 2em;
+  float: right;}
 
 a.custom-card,
 a.custom-card:hover {
