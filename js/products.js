@@ -18,12 +18,12 @@ function showProductsList(array) {
         if (((minPrice == undefined) || (parseInt(category.cost) >= minPrice)) &&
             ((maxPrice == undefined) || (parseInt(category.cost) <= maxPrice))) {
             
-            contenido += '<img src=' + category.imgSrc + 'class = "imgProduct"><br>';
+            contenido += '<img src=' + category.imgSrc + ' class = imgProduct ><br>';
             contenido += category.name + '<br><br>';
             contenido += 'Descripción: ' + category.description + '<br>';
             contenido += 'Precio: ' + category.cost + "<br>";
             contenido += 'Cantidad de vendidos: ' + category.soldCount;
-            contenido +='<a class= "link" href="https://japdevdep.github.io/ecommerce-api/product/5678.json">VER  PRODUCTO</a>';
+            contenido +='<a class= "link" href="product-info.html">VER  PRODUCTO</a>';
             contenido += '<br><hr><br>';
         }
         document.getElementById("divId").innerHTML = contenido;
