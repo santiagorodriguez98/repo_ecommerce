@@ -146,7 +146,22 @@ a.custom-card:hover {
   margin-bottom: 10px;
   width: 1000px;
 }
-h1.imgTitle{
+h1.imgTitle, h1.commentsTitle{
 text-align: center;
 text-decoration: underline;
+}
+div#comments{
+  text-align: center;
+  border: 2px solid black;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.commentsUser{
+  font-weight: bold;
+}
+#formDiv{
+  margin-left: 500px;
+}
+.checked {
+  color: orange;
 }
