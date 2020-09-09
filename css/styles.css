@@ -141,3 +141,12 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+.car1, .car2, .car3{ 
+  margin-left: 4cm;
+  margin-bottom: 10px;
+  width: 1000px;
+}
+h1.imgTitle{
+text-align: center;
+text-decoration: underline;
+}
