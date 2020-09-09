@@ -25,7 +25,16 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id= "info-user" style = "display: none;"><p style = "color: white;" id = "user"></p> <button id="exit" >Salir</button></div>
+      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id= "info-user" style = "display: none;">
+        <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id= "info-user" style = "display: none;">
+          <button class="btn btn-secundary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p id = "user"></p>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="Inicio.html">INDEX</a>
+            <a class="dropdown-item" href="products.html">PRODUCTS</a>
+            <a id="exit" class="dropdown-item" href="">SALIR</a>
+          </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5" id= "infoProduct">
@@ -37,15 +46,15 @@
   </div><br>
   <div  id = "formDiv" style = "display: none;"><form action=""><br>
     <textarea  id="writeCOM" cols="50" rows="5" placeholder="COMENTANOS TU EXPERIENCIA"></textarea><br>
-    <select name="select">
-    <option value="puntuar">Puntuar</option>
-    <option value="5">5</option>
-    <option value="4">4</option>
-    <option value="3">3</option>
-    <option value="2">2</option>
-    <option value="1">1</option>
+    <select id = "raiting" name="select">
+    <option value="">Puntuar</option>
+    <option>5</option>
+    <option>4</option>
+    <option>3</option>
+    <option>2</option>
+    <option>1</option>
   </select>
-  <input type="button"  value = "Enviar">
+  <input id = "enviar" type="button"  value = "Enviar">
 </div>
   <footer class="text-muted">
     <div class="container">

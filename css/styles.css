@@ -163,5 +163,10 @@ div#comments{
   margin-left: 500px;
 }
 .checked {
-  color: orange;
+  color: gold;
+}
+.productName{
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: 300px;
 }

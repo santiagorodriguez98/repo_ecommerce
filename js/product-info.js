@@ -9,11 +9,11 @@ function showProduct(infoProduct, commentsArray) {
     let images = "";
     let comments = "";
 
-    contenido += product.name + '<br><br>';
+    contenido += '<em class = "productName">' + product.name + '</em><br><br>';
     contenido += 'Descripción: <br><br>' + product.description + '<br><br>';
     contenido += 'Precio: ' + product.cost;
     contenido += " " + product.currency + "<br>";
-    contenido += 'Cantidad de vendidos: ' + product.soldCount+'<br>';
+    contenido += 'Cantidad de vendidos: ' + product.soldCount + '<br>';
     contenido += 'Categoría: ' + product.category
     contenido += '<br><hr><br>';
 
@@ -21,13 +21,24 @@ function showProduct(infoProduct, commentsArray) {
     images += '<img src = "img/car2.jpg" class = car2>';
     images += '<img src = "img/car3.jpg" class  = car3>';
 
+
     for (let comentarios in commentsArray) {
-        comments += '<br>Usuario: <p style= "font-weight: bold;">'+ commentsArray[comentarios].user + '</p>';
+        let comment = "";
+        for (let i = 0; i < commentsArray[comentarios].score; i++) {
+            comment += '<span class="fa fa-star checked"></span>'
+        }
+        for (let i = commentsArray[comentarios].score + 1; i <= 5; i++) {
+            comment += '<span class="fa fa-star "></span>'
+        }
+
+        comments += '<br>Usuario: <strong>' + commentsArray[comentarios].user + '</strong> ';
         comments += 'comentó: ' + commentsArray[comentarios].description + '<br>';
-        comments += 'Su puntuación: '+ commentsArray[comentarios].score + '/5 <br>';
-        comments += 'Publicado: '+ commentsArray[comentarios].dateTime + '<br><br>';
+        comments += 'Su puntuación: ' + comment + '<br>';
+        comments += 'Publicado: ' + commentsArray[comentarios].dateTime + '<br><br>';
+
     }
-    
+
+
     document.getElementById("comments").innerHTML = comments;
     document.getElementById("infoProduct").innerHTML = contenido;
     document.getElementById("productImages").innerHTML = images;
@@ -53,4 +64,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProduct(infoProduct, commentsArray);
     });
     
+    document.getElementById("enviar").addEventListener("click", function () {
+        let time = Date ();
+        let timeDate = '';
+
+        let newComment = {
+            user: JSON.parse(localStorage.getItem("User-Logged")).email,
+            description: parseInt(document.getElementById("writeCOM").value),
+            score: document.getElementById("raiting").value,
+            dateTime: "",
+        };
+        commentsArray.push(newComment);
+        showProduct(infoProduct, commentsArray);
+    });
 });
