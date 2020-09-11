@@ -21,7 +21,7 @@ function showProduct(infoProduct, commentsArray) {
     images += '<img src = "img/car2.jpg" class = car2>';
     images += '<img src = "img/car3.jpg" class  = car3>';
 
-
+   
     for (let comentarios in commentsArray) {
         let comment = "";
         for (let i = 0; i < commentsArray[comentarios].score; i++) {
@@ -48,14 +48,14 @@ function showProduct(infoProduct, commentsArray) {
 
 
 
-
 document.addEventListener("DOMContentLoaded", function (e) {
+    
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             commentsArray = resultObj.data;
         }
     });
-
+    
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             infoProduct = resultObj.data;
@@ -63,18 +63,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
         showProduct(infoProduct, commentsArray);
     });
-    
-    document.getElementById("enviar").addEventListener("click", function () {
-        let time = Date ();
-        let timeDate = '';
 
+    document.getElementById("enviar").addEventListener("click", function () {
+    
+        function showDate() {
+            var time = new Date();
+            let timeDate = time.getFullYear() + '-' + time.getMonth() + '-' + time.getDay() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
+
+        }
+        
         let newComment = {
             user: JSON.parse(localStorage.getItem("User-Logged")).email,
-            description: parseInt(document.getElementById("writeCOM").value),
+            description: document.getElementById("writeCOM").value,
             score: document.getElementById("raiting").value,
             dateTime: "",
         };
         commentsArray.push(newComment);
         showProduct(infoProduct, commentsArray);
+
     });
 });

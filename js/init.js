@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   if (userLogged) {
     userLogged = JSON.parse(userLogged);
     user.innerText = user.innerText + "Estas logueado como: " + userLogged.email;
-    document.getElementById("user").innerHTML = "Estas logueado como: "+ userLogged.email;
+    document.getElementById("user").innerHTML = userLogged.email;
     infoUser.style = "display: inline-block";
     var form = document.getElementById("formDiv");
     form.style = "display: inline-block";
