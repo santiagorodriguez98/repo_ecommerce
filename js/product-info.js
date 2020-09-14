@@ -65,21 +65,36 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.getElementById("enviar").addEventListener("click", function () {
-    
-        function showDate() {
-            var time = new Date();
-            let timeDate = time.getFullYear() + '-' + time.getMonth() + '-' + time.getDay() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
-
-        }
+       
+            var month = new Array();
+            month[0] = "1";
+            month[1] = "2";
+            month[2] = "3";
+            month[3] = "4";
+            month[4] = "5";
+            month[5] = "6";
+            month[6] = "7";
+            month[7] = "8";
+            month[8] = "9";
+            month[9] = "10";
+            month[10] = "11";
+            month[11] = "12";
+           
+            let time = new Date();
+            var o = month[time.getMonth()];
+            var n = time.getDate();
+            let dateTime = time.getFullYear()+'-'+o+'-'+n+' '+time.getHours()+':'+time.getMinutes()+':'+time.getSeconds(); 
         
+        
+   
         let newComment = {
             user: JSON.parse(localStorage.getItem("User-Logged")).email,
             description: document.getElementById("writeCOM").value,
             score: document.getElementById("raiting").value,
-            dateTime: "",
+            dateTime: dateTime
         };
         commentsArray.push(newComment);
         showProduct(infoProduct, commentsArray);
-
+    
     });
 });
