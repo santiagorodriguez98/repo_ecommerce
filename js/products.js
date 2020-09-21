@@ -10,16 +10,16 @@ const SORT_DESC_REL = "RELEV"
 
 function showProductsList(array) {
 
-    let contenido = "";
+    let contenido = '<h1 class = Title >Nuestros Productos:</h1><br><br><br>';
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
 
 
         if (((minPrice == undefined) || (parseInt(category.cost) >= minPrice)) &&
             ((maxPrice == undefined) || (parseInt(category.cost) <= maxPrice))) {
-            
+           
+            contenido += '<strong class = product>'+ category.name + '</strong><br>';
             contenido += '<img src=' + category.imgSrc + ' class = imgProduct ><br>';
-            contenido += category.name + '<br><br>';
             contenido += 'Descripción: ' + category.description + '<br>';
             contenido += 'Precio: ' + category.cost + "<br>";
             contenido += 'Cantidad de vendidos: ' + category.soldCount;

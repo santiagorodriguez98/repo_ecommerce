@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   document.getElementById("exit").addEventListener("click", function (e) {
     localStorage.removeItem('User-Logged');
-    window.location = "index.html";
+    window.location = "Index.html";
 
   });
 

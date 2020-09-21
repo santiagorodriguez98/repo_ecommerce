@@ -129,7 +129,7 @@ footer p {
   z-index: 1021;
   display: none;
 }
-a.link {font-size: 2em;
+a.link{font-size: 2em;
   float: right;}
 
 a.custom-card,
@@ -146,13 +146,12 @@ a.custom-card:hover {
   margin-bottom: 10px;
   width: 1000px;
 }
-h1.imgTitle, h1.commentsTitle{
+.Title, .product{
 text-align: center;
 text-decoration: underline;
 }
 div#comments{
   text-align: center;
-  border: 2px solid black;
   margin-left: 200px;
   margin-right: 200px;
 }
@@ -169,4 +168,39 @@ div#comments{
   font-weight: bold;
   font-size: 50px;
   margin-left: 300px;
+}
+.imgRelatedProduct{
+  margin-bottom: 20px;
+  width: 200px;
+}
+.relatedLink {
+  font-size: 1em;
+  float: right;
+}
+#relatedProducts{
+  width: 600px;
+  margin-left: 400px;
+  margin-top: 100px;
+  text-align: center;
+
+}
+.imgProduct{
+  width: 200px;
+}
+#filterTool{
+  float: right;
+  border-left: 2px solid black;
+  margin-right: 10px;
+  border-right: 2px solid black;
+}
+#ordenar, #filtrar{
+  border-bottom: 2px solid black;
+}
+
+.dropdown-toggle::after {
+  margin-top: 0.6rem;
+}
+
+#dropdownMenuButton {
+  display: flex;
 }

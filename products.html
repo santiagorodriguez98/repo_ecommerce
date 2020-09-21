@@ -24,38 +24,33 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
         <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id= "info-user" style = "display: none;">
-          <button class="btn btn-secundary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p id = "user"></p>
-          </button>
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p id = "user"></p></button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="Inicio.html">INDEX</a>
-            <a class="dropdown-item" href="products.html">PRODUCTS</a>
-            <a id="exit" class="dropdown-item" href="#">SALIR</a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+            <a id="exit" class="dropdown-item" href="#">Cerrar sesión</a>
           </div>
       </div>
       </div>
     </nav>
-    <style>
-      #filterTool{
-        border-left: 2px solid black;
-        float: right;}
-        p, input, button{margin-left: 5px;
-        margin-right: 20px;}
-      </style>
     <div id = "filterTool">
-      <p>Filtrar por precio</p>
+      <div id="filtrar">
+      <p class= "product">Filtrar por precio</p>
       <label for="minPrice"></label>
       <input id = "minPrice" type="number" placeholder="desde" step="5"><br><br>
       <label for="maxPrice"></label>
       <input id = "maxPrice" type="number" placeholder="hasta"><br><br>
       <button id = "Filter">Filtrar</button>
-      <button id = "clean">Limpiar</button><br><br>
-      <p>Ordenar por precio</p>
+      <button id = "clean">Limpiar</button><br>
+    </div>
+      <div id = "ordenar">
+      <p class= "product">Ordenar por precio</p>
       <button id = "asc">Ascen</button>
       <button id = desc>Descen</button><br><br>
-      <p>Ordenar por relevancia</p>
+      <p class= "product">Ordenar por relevancia</p>
       <button id = "relev">Descendente</button>
+    </div>
     </div>
     <div class="container p-5" id = "divId">
     </div>
