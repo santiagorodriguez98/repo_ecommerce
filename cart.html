@@ -11,7 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
+  <link href="css/styles.css" hrel="stylesheet">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -40,16 +40,70 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id="info-user" style="display: none;">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <p id="user"></p>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a id="exit" class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre del artículo</th>
+          <th>Imágen</th>
+          <th>Precio unitario</th>
+          <th id="cantidad">Cantidad</th>
+          <th id="subtotal">Costo subtotal en pesos</th>
+          <th id="subtotal">Costo subtotal en dólares</th>
+        </tr>
+      </thead>
+      <tbody id="listado"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Costo total en pesos:</td>
+          <td id="totalPesos"></td>
+        </tr>
+        <td colspan="3">Costo total en dólares:</td>
+        <td id="totalDolares"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Precio total</th>
+        <th>Precio del envío</th>
+        <th>Entrega</th>
+      </tr>
+    </thead>
+    <tbody id="totalEnvio"></tbody>
+  </table>
+  <br>
+  <div id="sendOptions">
+    <h4>Tipo de envío</h4>
+
+    <input type="radio" id="Premium" name="envio" value="200" checked="" required="">
+    <label for="Premium">Premium 2-5 días </label><br>
+
+    <input type="radio" id="Express" name="envio" value="500" required="">
+    <label for="Express">Express 5-8 días</label><br>
+
+    <input type="radio" id="Standard" name="envio" value="1000" required="">
+    <label for="Standard">Standard 12-15 días</label><br>
+  </div>
+  <br><br><br>
+  <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Comprar</button>
+  <br><br>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">

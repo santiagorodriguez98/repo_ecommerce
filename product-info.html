@@ -24,40 +24,45 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id= "info-user" style = "display: none;">
-        <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id= "info-user" style = "display: none;">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p id = "user"></p>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-            <a id="exit" class="dropdown-item" href="#">Cerrar sesión</a>
-          </div>
+      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id="info-user" style="display: none;">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <p id="user"></p>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a id="exit" class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
       </div>
     </div>
   </nav>
-  <div class="container p-5" id= "infoProduct">
+  <div class="container p-5" id="infoProduct">
   </div>
-  <h1 class = Title >Imágenes:</h1>
-  <div id = "productImages"></div>
-  <h1 class = Title>Comentarios:</h1><br>
-  <div id = "comments">
+  <h1 class=Title>Imágenes:</h1>
+  <div id="productImages"></div>
+  <h1 class=Title>Comentarios:</h1><br>
+  <div id="comments">
   </div><br>
-  <div  id = "formDiv" style = "display: none;"><form action=""><br>
-    <textarea  id="writeCOM" name = "descripcion" cols="50" rows="5" placeholder="COMENTANOS TU EXPERIENCIA"></textarea><br>
-    <select id = "raiting" name="select">
-    <option value="">Puntuar</option>
-    <option>5</option>
-    <option>4</option>
-    <option>3</option>
-    <option>2</option>
-    <option>1</option>
-  </select>
-  <input id = "enviar" type="button"  value = "Enviar">
-</div>
-<div ></div> <hr>
-<br><br><br><br><h1 class = Title>Poductos relacionados</h1><br>
-<div id = "relatedProducts"></div>
+  <div id="formDiv" style="display: none;">
+    <form action=""><br>
+      <textarea id="writeCOM" name="descripcion" cols="50" rows="5"
+        placeholder="COMENTANOS TU EXPERIENCIA"></textarea><br>
+      <select id="raiting" name="select">
+        <option value="">Puntuar</option>
+        <option>5</option>
+        <option>4</option>
+        <option>3</option>
+        <option>2</option>
+        <option>1</option>
+      </select>
+      <input id="enviar" type="button" value="Enviar">
+  </div>
+  <div></div>
+  <hr>
+  <br><br><br><br>
+  <h1 class=Title>Poductos relacionados</h1><br>
+  <div id="relatedProducts"></div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -77,7 +82,7 @@
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src = "js/init.js"></script>
+  <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
 </body>
 
