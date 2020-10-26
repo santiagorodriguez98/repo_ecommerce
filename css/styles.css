@@ -215,6 +215,16 @@ div#comments{
 }
 table{ text-align: center;
 }
-#sendOptions{
+.modal-title {
+  text-align: center;
+}
+.modal-header{
+  font-weight: bold;
+}
+#datosComprador{
+  width: 30em;
+  margin-left: 30% ;
+}
+#divEnvio{
   text-align: center;
 }

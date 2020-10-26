@@ -62,7 +62,6 @@
           <th>Precio unitario</th>
           <th id="cantidad">Cantidad</th>
           <th id="subtotal">Costo subtotal en pesos</th>
-          
         </tr>
       </thead>
       <tbody id="listado"></tbody>
@@ -71,7 +70,7 @@
           <td colspan="4">Costo total en pesos:</td>
           <td id="totalPesos"></td>
         </tr>
-      
+
         </tr>
       </tfoot>
     </table>
@@ -80,28 +79,104 @@
   <table>
     <thead>
       <tr>
-        <th>Precio total</th>
+        <th>Precio total sin envío</th>
         <th>Precio del envío</th>
-        <th>Entrega</th>
+        <th>Precio total con envío</th>
       </tr>
     </thead>
     <tbody id="totalEnvio"></tbody>
   </table>
   <br>
-  <div id="sendOptions">
-    <h4>Tipo de envío</h4>
+  
+  <form id="datosEnvio" novalidate><!-- formulario de envio -->
+    <div id ="datosComprador">
+      <h4>Datos del comprador:</h4><br> 
+      <input type="text" size="" class="form-control" placeholder="Nombre" required ><br>
+      <input type="text" class="form-control" placeholder="Apellido" required><br>
+      <input type="text" class="form-control" placeholder="País" required><br>
+      <input type="text" class="form-control" placeholder="Calle" required><br>
+      <input type="number" class="form-control" placeholder="Número" required><br>
+      <input type="text" class="form-control" placeholder="Esquina" required><br>
+      <br>
+    </div>
+    <div id = "divEnvio">
+      <h4>Selecciona el tipo de envío</h4><br>
 
-    <input type="radio" id="Premium" name="envio" value="200" checked="" required="">
-    <label for="Premium">Premium 2-5 días </label><br>
+      <input type="radio" id="Premium" name="envio" value="15" checked="" required>
+      <label for="Premium">Premium 2-5 días </label><br>
 
-    <input type="radio" id="Express" name="envio" value="500" required="">
-    <label for="Express">Express 5-8 días</label><br>
+      <input type="radio" id="Express" name="envio" value="7" required>
+      <label for="Express">Express 5-8 días</label><br>
 
-    <input type="radio" id="Standard" name="envio" value="1000" required="">
-    <label for="Standard">Standard 12-15 días</label><br>
-  </div>
-  <br><br><br>
-  <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Comprar</button>
+      <input type="radio" id="Standard" name="envio" value="5" required>
+      <label for="Standard">Standard 12-15 días</label><br><br><br>
+    </div>
+    <button class="btn btn-block btn-secondary"  data-toggle="modal" data-target="#modalPagar" width="50%">Elegir método de
+      pago</button>
+    <input class="btn btn-block btn-primary data-toggle=" id = "submit" type="submit" value = "Confirmar compra" id="submit">
+  </form>
+  
+    
+ <!-- MODAL INICIO -->
+  
+  <div class="modal fade" id="modalPagar">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">¿Cómo quieres pagar?</h5>
+        </div>
+        <div class="modal-body">
+          <form id="modalPago" novalidate>  <!--formulario del MODAL-->   
+            <div>
+              <h5 class="modal-title">Ingresa los datos a continuacion</h5><br>
+
+              <input type="radio" name="metodosDePago" value="transferencia">
+              <label for="transferencia">Transferencia bancaria</label><br>
+              <div id="transferencia"><!--TRANSFERENCIA BANCARIA-->                
+                <select name="" id="bancos">
+                  <option value="default">Seleccionar banco</option>
+                  <option value="BSE">BROU</option>
+                  <option value="Santander">Santander</option>
+                </select><br><br>
+                <input type="number" id = "numeroCuenta" name="numeroCuenta" placeholder="Escribe el numero de cuenta" class="form-control">
+              </div><br>
+
+              <input type="radio" name="metodosDePago" value="debito" required>
+                <label for="debito">Tarjeta de débito</label>
+
+              <div id="debito"><!--DEBITO-->
+                <input type="number" name="numeroTarjeta" placeholder="Escribe el numero de la tarjeta"
+                  class="form-control" required><br>
+                  <input type="number" name="codigoTarjeta" placeholder="Escribe el codigo de seguridad"
+                class="form-control" required><br>
+              </div><br>
+
+              <input type="radio" name="metodosDePago" value="credito" checked>
+              <label for="credito">Tarjeta de crédito</label><br>
+              <div id="credito"> <!--CREDITO-->
+                <input type="number" name="codigoTarjeta" placeholder="Escribe el numero de la tarjeta"
+                class="form-control" required><br>
+                <input type="number" name="numeroTarjeta" placeholder="Escribe el codigo de seguridad"
+                class="form-control" required><br>
+                <select name="" id="cuotas">
+                  <option value="default">Elige la cantidad de cuotas</option>
+                  <option value="6">6</option>
+                  <option value="12">12</option>
+                  <option value="18">18</option>
+                  <option value="24">24</option>
+                </select><br>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" id = "btnPago" class="btn btn-block btn-success">Aceptar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  <!--MODAL FINAL-->
+  <br><br>
+  
   <br><br>
   </div>
   <div id="spinner-wrapper">
