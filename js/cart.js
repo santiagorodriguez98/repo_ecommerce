@@ -81,21 +81,26 @@ for (let i = 0; i < metodosDePago.length; i++) {
 function seleccionarPago() {
     let metodosDePago = document.getElementsByName("metodosDePago");
     for (let i = 0; i < metodosDePago.length; i++) {
+        let seleccion;
         if ((metodosDePago[i].value == "transferencia") && (metodosDePago[i].checked)) {
             document.getElementById("transferencia").classList.remove("d-none");
             document.getElementById("debito").classList.add("d-none");
             document.getElementById("credito").classList.add("d-none");
+            let seleccion = metodosDePago[i].value;
         }
         else if ((metodosDePago[i].value == "debito") && (metodosDePago[i].checked)) {
             document.getElementById("debito").classList.remove("d-none");
             document.getElementById("transferencia").classList.add("d-none");
             document.getElementById("credito").classList.add("d-none");
+            let seleccion = metodosDePago[i].value;
         }
         else if ((metodosDePago[i].value == "credito") && (metodosDePago[i].checked)) {
             document.getElementById("credito").classList.remove("d-none");
             document.getElementById("transferencia").classList.add("d-none");
             document.getElementById("debito").classList.add("d-none");
+            let seleccion = metodosDePago[i].value;
         }
+        return seleccion;
     }
 }
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -108,11 +113,46 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 
-  
+    function modalValidation() {
+        let varControl = true;
+        let transferencia = document.getElementById("validTransfer");
+        let bancos = document.getElementById("bancos");
+        let numeroCuenta = document.getElementById("numeroCuenta");
+        let debito = document.getElementById("validDebit");
+        let tarjetaDebito = document.getElementById("numeroTarjetaDeb");
+        let codigoDebito = document.getElementById("codigoTarjeta");
+        let credito = document.getElementById("validCredit");
+        let tarjetaCredito = document.getElementById("numeroTarjetaCred");
+        let codigoCredito = document.getElementById("codigoTarjetaCred");
+        let cuotas = document.getElementById("cuotas");
+        if ((transferencia.checked) && (bancos.value === "default") && (numeroCuenta === "")) {
+            varControl = false;
+        }
+        else if ((debito.checked) && (tarjetaDebito.value === "") && (codigoDebito === "")) {
+            varControl = false;
+        }
+        else if ((credito.checked) && (tarjetaCredito.value === "") && (codigoCredito === "")&&(cuotas.value === "default")) {
+            varControl = false;
+        }
+    }
+    document.getElementById("btnPago").addEventListener("click", function (e){
+        modalValidation();
+        seleccionarPago()
+        if((varControl === true)&&(d)){
+            
+            localStorage.setItem('datosPago', JSON.stringify({
+                Nombre: nombre,
+                Edad: edad,
+                Email: email,
+                Telefono: telefono
+            }));
+        }
+    });
     let datosEnvio = document.getElementById("datosEnvio");
     let modalPago = document.getElementById("modalPago");
     datosEnvio.addEventListener('submit', function (e) {
-        if ((datosEnvio.checkValidity() === false)||(modalValidation() === false)) {
+        modalValidation();
+        if ((datosEnvio.checkValidity() === false) || (varControl === false)) {
             e.preventDefault();
             e.stopPropagation();
         }
@@ -126,5 +166,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
             calcEnvio();
         });
     }
+
 });
- 

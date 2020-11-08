@@ -40,15 +40,44 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-    </div>
+      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id="info-user" style="display: none;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <p id="user"></p>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a id="exit" class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
+      </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div width="50px" id="campos"><br>
+
+      <h1>Mi perfil</h1><br>
+     
+      <a  href="https://ibb.co/HXy7MF2"><img id = "imgProfile" src="https://i.ibb.co/0QLqWDX/login.png" alt="login" border="0"></a><br><br>
+
+      <input id = "imgLink" placeholder="Ingresa el link de la imagen" type="text"><br><br>
+
+      <input id="nombreCompleto" class="form-control" placeholder="Nombre completo:" type="text"><br>
+
+      <input id="edad" class="form-control" placeholder="Edad:" type="text"><br>
+
+      <input id="email" class="form-control" placeholder="E-mail:" type="text"><br>
+
+      <input id="telefono" class="form-control" placeholder="Teléfono:" type="text"><br><br><br>
+
+      <button id="enviar">Guardar cambios</button>
+    </div>
+    <div id="success" class="d-none alert alert-success alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Sus datos han sido guardados correctamente</strong>
+    </div>
+    <div id="danger" class="d-none alert alert-danger alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Debes completar los campos obligarios!</strong>
     </div>
   </div>
   <footer class="text-muted bg-light">

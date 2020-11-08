@@ -129,7 +129,7 @@
             <div>
               <h5 class="modal-title">Ingresa los datos a continuacion</h5><br>
 
-              <input type="radio" name="metodosDePago" value="transferencia">
+              <input id = "validTransfer" type="radio" name="metodosDePago" value="transferencia">
               <label for="transferencia">Transferencia bancaria</label><br>
               <div id="transferencia"><!--TRANSFERENCIA BANCARIA-->                
                 <select name="" id="bancos">
@@ -140,22 +140,22 @@
                 <input type="number" id = "numeroCuenta" name="numeroCuenta" placeholder="Escribe el numero de cuenta" class="form-control">
               </div><br>
 
-              <input type="radio" name="metodosDePago" value="debito" required>
+              <input id = "validDebit" type="radio" name="metodosDePago" value="debito" required>
                 <label for="debito">Tarjeta de débito</label>
 
               <div id="debito"><!--DEBITO-->
-                <input type="number" name="numeroTarjeta" placeholder="Escribe el numero de la tarjeta"
+                <input type="number" id="numeroTarjetaDeb" placeholder="Escribe el numero de la tarjeta"
                   class="form-control" required><br>
-                  <input type="number" name="codigoTarjeta" placeholder="Escribe el codigo de seguridad"
+                  <input type="number" id="codigoTarjetaDeb" placeholder="Escribe el codigo de seguridad"
                 class="form-control" required><br>
               </div><br>
 
-              <input type="radio" name="metodosDePago" value="credito" checked>
+              <input id = "validCredit" type="radio" name="metodosDePago" value="credito" checked>
               <label for="credito">Tarjeta de crédito</label><br>
               <div id="credito"> <!--CREDITO-->
-                <input type="number" name="codigoTarjeta" placeholder="Escribe el numero de la tarjeta"
+                <input type="number" id="codigoTarjetaCred" placeholder="Escribe el numero de la tarjeta"
                 class="form-control" required><br>
-                <input type="number" name="numeroTarjeta" placeholder="Escribe el codigo de seguridad"
+                <input type="number" id="numeroTarjetaCred" placeholder="Escribe el codigo de seguridad"
                 class="form-control" required><br>
                 <select name="" id="cuotas">
                   <option value="default">Elige la cantidad de cuotas</option>

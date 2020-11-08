@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if (email.value === "" || contraseña.value === "") {
             
+            let warning = document.getElementById("danger");
             camposCompletos = false;
-            alert("Debe completar sus datos primero");
+            warning.classList.remove("d-none");
         }
         if (camposCompletos) {
             localStorage.setItem('User-Logged', JSON.stringify({email: emailId.value}));

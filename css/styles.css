@@ -148,7 +148,7 @@ a.custom-card:hover {
 }
 .Title, .product{
 text-align: center;
-text-decoration: underline;
+
 }
 div#comments{
   text-align: center;
@@ -187,15 +187,6 @@ div#comments{
 .imgProduct{
   width: 200px;
 }
-#filterTool{
-  float: right;
-  border-left: 2px solid black;
-  margin-right: 10px;
-  border-right: 2px solid black;
-}
-#ordenar, #filtrar{
-  border-bottom: 2px solid black;
-}
 
 .dropdown-toggle::after {
   margin-top: 0.6rem;
@@ -228,3 +219,9 @@ table{ text-align: center;
 #divEnvio{
   text-align: center;
 }
+#campos{
+  text-align: center;
+  margin-left: 250px;
+  width: 50%;
+}
+

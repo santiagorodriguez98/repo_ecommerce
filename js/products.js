@@ -10,7 +10,7 @@ const SORT_DESC_REL = "RELEV"
 
 function showProductsList(array) {
 
-    let contenido = '<h1 class = Title >Nuestros Productos:</h1><br><br><br>';
+    let contenido = '';
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
 
@@ -18,13 +18,13 @@ function showProductsList(array) {
         if (((minPrice == undefined) || (parseInt(category.cost) >= minPrice)) &&
             ((maxPrice == undefined) || (parseInt(category.cost) <= maxPrice))) {
            
-            contenido += '<strong class = product>'+ category.name + '</strong><br>';
+            contenido += '<br><br><div class = "col-sm-12 col-md-6 col-lg-4"><strong class = product>'+ category.name + '</strong><br>';
             contenido += '<img src=' + category.imgSrc + ' class = imgProduct ><br>';
             contenido += 'Descripción: ' + category.description + '<br>';
             contenido += 'Precio: ' + category.cost + "<br>";
             contenido += 'Cantidad de vendidos: ' + category.soldCount;
             contenido +='<a class= "link" href="product-info.html">VER  PRODUCTO</a>';
-            contenido += '<br><hr><br>';
+            contenido += '<br><hr><br></div>';
         }
         document.getElementById("divId").innerHTML = contenido;
     }

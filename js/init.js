@@ -45,25 +45,37 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   document.getElementById("exit").addEventListener("click", function (e) {
     localStorage.removeItem('User-Logged');
+    localStorage.removeItem('User');
     window.location = "Index.html";
 
   });
 
+
   let userLogged = localStorage.getItem('User-Logged');
   let infoUser = document.getElementById("info-user");
   let user = document.getElementById("user");
+  let datosUsuario = localStorage.getItem('User');
 
+  if (datosUsuario) {
+    usuario = JSON.parse(datosUsuario);
 
+    document.getElementById("nombreCompleto").value = usuario.Nombre;
+    document.getElementById("edad").value = usuario.Edad;
+    document.getElementById("email").value = usuario.Email;
+    document.getElementById("telefono").value = usuario.Telefono;
+    document.getElementById("imgProfile").src = usuario.Imagen;
+    document.getElementById("imgLink").value = usuario.Imagen;
+  }
   if (userLogged) {
     userLogged = JSON.parse(userLogged);
     user.innerText = user.innerText + "Estas logueado como: " + userLogged.email;
     document.getElementById("user").innerHTML = userLogged.email;
     infoUser.style = "display: inline-block";
     var form = document.getElementById("formDiv");
-    form.style = "display: inline-block";
+    form = "display: inline-block";
   }
 
- 
+
 });
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

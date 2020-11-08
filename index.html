@@ -14,43 +14,51 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    html, body{
+    html,
+    body {
       height: 100%;
     }
 
     body {
       background-color: rgb(245, 245, 245);
-    display: -ms-flexbox;
+      display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
       align-items: center;
       padding-top: 40px;
-      
-     
+
+
     }
-    h2,h4 {
+
+    h2,
+    h4 {
       color: black;
       font-family: 'Gill Sans MT';
       font-weight: bold;
       font-size: 20px;
       text-align: center;
-   
+
 
     }
-    .emailClass.passwordClass{
+
+    .emailClass.passwordClass {
       width: 20em;
     }
-    #buttonId{
-      
+
+    #buttonId {
+width: 100%;
       padding-bottom: 10px;
     }
-    .imgClass{
-      width: 30%;
-      
-      
+
+    .imgClass {
+      width: 500px;
     }
-    .signin{
-      align-items: center;
+    #emailId, #passwordId{
+      width: 50%;
+    }
+
+    .signin {
+      margin-left: 150px;
       text-align: center;
     }
   </style>
@@ -58,19 +66,48 @@
 
 <body class="text-center">
   <div class="signin">
-    <pre>
-    <img src="img/login.png" class= "imgClass">
-
-    <h2>Bienvenido, por favor ingresa los datos a continuación
-    </h2> 
-      <input type="email" id = "emailId" class="emailClass" placeholder="Escribe tu email"><br><br>
-      <input type="password" id = "passwordId" class="passwordClass" placeholder="Escribe tu contraseña"><br><br>
-      <button type="submit" id = "buttonId">Loguearme</button><br>
-      <h4>Te deseamos la mejor experiencia en nuestro sitio web</h4>
-    </pre>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <img src="img/login.png" class="imgClass"><br>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h1>Bienvenido, por favor ingresa los datos a continuación
+          </h1><br><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input type="email"  id="emailId" class="emailClass" placeholder="Escribe tu email"><br><br></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input type="password" id="passwordId" class="passwordClass" placeholder="Escribe tu contraseña"><br><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-primary " type="submit" id="buttonId">Loguearme</button><br><br>
+        </div>
+        <div id="danger" class="d-none alert alert-danger alert-dismissible">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Debes completar los campos para loguearte</strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4>Te deseamos la mejor experiencia en nuestro sitio web</h4><br>
+        </div>
+      </div>
+    </div>
   </div>
 
 
   <script src="js/login.js"></script>
+
 </body>
+
 </html>
