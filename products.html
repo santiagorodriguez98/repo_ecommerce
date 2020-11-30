@@ -26,8 +26,8 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id="info-user" style="display: none;">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      <div class="dropdown py-2 d-none " href="cart.html" id="info-user">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <p id="user"></p>
         </button>
@@ -44,82 +44,79 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-12">
-            <h1 class=Title>Encontrá lo que estas buscando</h1><br>
-            <h4 class=Title>La mejor línea de productos con el mayor respaldo y calidad</h4><br><br><br>
-          </div>
-        </div>
+      <div class="col-6"><img class="imgProducts" src="img/cover_back.png" alt="">
+      </div>
+      <div class = "col-6">
+        <h3>Encontrá lo que estas buscando</h1><br>
+          <h5>La mejor línea de productos con el mayor respaldo y calidad</h4>
       </div>
     </div>
-      <div class="row">
-        <div class="col-md-4 col-lg-4">
-          <div id="filterTool">
-            <div id="filtrar">
-              <div class="row">
-                <div class="col-6">
+    <hr>
+
+    <!--  HERRAMIENTAS PRODUCTOS  -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="tools">
+          <div class="row">
+            <div id="filterTool">
+              <div id="filtrar">
+                <div class="col-12">
                   <p class="product">Filtrar por precio</p>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <label for="minPrice"></label>
-                  <input id="minPrice" type="number" placeholder="desde" step="5"><br><br>
-                  <label for="maxPrice"></label>
-                  <input id="maxPrice" type="number" placeholder="hasta"><br><br>
+                <div class="row">
+                  <div class="filtrarPrecio col-12">
+                    <label for="minPrice"></label>
+                    <input id="minPrice" width="100px" type="number" placeholder="desde" min="1"><br><br>
+                    <label for="maxPrice"></label>
+                    <input id="maxPrice" type="number" placeholder="hasta" min="1"><br><br>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-3">
-                  <button id="Filter">Filtrar</button>
-                </div>
-                <div class="col-3">
-                  <button id="clean">Limpiar</button><br>
+                <div class="filtertPrice row">
+                  <div class="col-2">
+                    <button id="Filter" class="btn btn-secondary">Filtrar</button>
+                  </div>
+                  <div class="col-3"></div>
+                  <div class="col-2">
+                    <button id="clean" class="btn btn-secondary">Limpiar</button><br>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-4">
+          </div><br>
+          <hr>
           <div class="row">
             <div id="ordenar">
-              <div class="col-12">
-                <p class="product">Ordenar por precio</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-3">
-              <button id="asc">Ascen</button>
-            </div>
-            <div class="col-3">
-              <button id=desc>Descen</button><br><br>
+                <div class="col-12">
+                  <p class="sortPrice">Ordenar por precio</p>
+                </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-lg-4">
-          <div class="row">
-            <div class="col-3">
-              <p class="product">Ordenar por relevancia</p>
-            </div>
+        <div class="row">
+          <div class="col-2">
+            <button id="asc" class="btn btn-secondary">Ascen</button>
           </div>
+          <div class="col-3"> </div>
+          <div class="col-2">
+            <button id=desc class="btn btn-secondary">Descen</button><br><br>
+          </div>
+        </div>
+        <hr><br>
+        <div class="col-md-4 col-lg-12">
+          <p>Ordenar por relevancia</p>
           <div class="row">
             <div class="col-12">
-              <button id="relev">Descendente</button>
+              <button id="relev" class=" sortRel btn btn-secondary">Descendente</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <hr>
-        <hr>
+      <!--  PRODUCTOS  -->
+      <div class="col-md-9">
+        <div id="divProducts" class="row">
+        </div>
       </div>
     </div>
-    <div id="divId" class="row"></div>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

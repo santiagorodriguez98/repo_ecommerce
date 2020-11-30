@@ -1,5 +1,5 @@
 .jumbotron, .card-body, .container, .site-header{
-    font-family: 'Raleway', serif !important;
+    font-famiy: 'Raleway', serif !important;
 }
 
 .jumbotron .display-4{
@@ -195,7 +195,7 @@ div#comments{
 #dropdownMenuButton {
   display: flex;
 }
-#listado, table, thead, tr, th, td {
+#listado, table, thead, tr, th, td, {
   width: 100%;
   max-width: 1000px;
   padding: 15px;
@@ -224,4 +224,44 @@ table{ text-align: center;
   margin-left: 250px;
   width: 50%;
 }
+.imgProducts{
+  width: 100%;
+}
 
+.tools{
+  text-align: left;
+}
+.sortPrice{
+  margin-left: 25px;
+}
+.filtertPrice{
+margin-left: 5px;
+}
+.sortRel{
+  margin-left: 20px;
+}
+#imgsProduct{
+  margin-left: 350px;
+  width: 50%;
+  
+}
+#commentDiv{
+  border-bottom: 2px black solid;
+}
+#writeCOM{
+  border: 5px lightgray solid;
+}
+.carTable{
+  border: 3px black solid;
+  margin-left: 150px;
+}
+.totalTable{
+  margin-left: 350px;
+}
+
+.relatedProduct{
+  border: 1px solid black;
+}
+.bttnRelProduct{
+float: right;
+}

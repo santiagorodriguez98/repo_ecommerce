@@ -53,9 +53,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   let userLogged = localStorage.getItem('User-Logged');
   let infoUser = document.getElementById("info-user");
-  let user = document.getElementById("user");
   let datosUsuario = localStorage.getItem('User');
-
   if (datosUsuario) {
     usuario = JSON.parse(datosUsuario);
 
@@ -68,13 +66,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
   }
   if (userLogged) {
     userLogged = JSON.parse(userLogged);
-    user.innerText = user.innerText + "Estas logueado como: " + userLogged.email;
+    infoUser.classList.remove("d-none");
     document.getElementById("user").innerHTML = userLogged.email;
-    infoUser.style = "display: inline-block";
-    var form = document.getElementById("formDiv");
-    form = "display: inline-block";
+    document.getElementById("formDiv").style = "display: inline-block";
   }
-
 
 });
 //Función que se ejecuta una vez que se haya lanzado el evento de

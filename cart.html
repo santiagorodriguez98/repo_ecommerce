@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
 <head>
@@ -40,7 +39,7 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown py-2 d-none d-md-inline-block" href="cart.html" id="info-user" style="display: none;">
+      <div class="dropdown py-2 d-none" href="cart.html" id="info-user">
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <p id="user"></p>
@@ -53,22 +52,24 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <table>
-      <thead>
+  <div id = "cart">
+  <div  class="row container p-5">
+    <table class="carTable col-md-12">
+      <thead class="carTable">
         <tr>
-          <th>Nombre del artículo</th>
-          <th>Imágen</th>
-          <th>Precio unitario</th>
-          <th id="cantidad">Cantidad</th>
+          <th class="carTable">Nombre del artículo</th>
+          <th class="carTable">Imágen</th>
+          <th class="carTable">Precio unitario</th>
+          <th id="cantidad" class="carTable">Cantidad</th>
           <th id="subtotal">Costo subtotal en pesos</th>
+          <th class="carTable">Eliminar</th>
         </tr>
       </thead>
-      <tbody id="listado"></tbody>
+      <tbody id="listado" class="carTable"></tbody>
       <tfoot>
         <tr>
-          <td colspan="4">Costo total en pesos:</td>
-          <td id="totalPesos"></td>
+          <td class="carTable" colspan="4">Costo total en pesos:</td>
+          <td id="totalPesos" class="carTable"></td>
         </tr>
 
         </tr>
@@ -76,30 +77,37 @@
     </table>
   </div>
   <br>
-  <table>
-    <thead>
-      <tr>
-        <th>Precio total sin envío</th>
-        <th>Precio del envío</th>
-        <th>Precio total con envío</th>
-      </tr>
-    </thead>
-    <tbody id="totalEnvio"></tbody>
-  </table>
-  <br>
-  
-  <form id="datosEnvio" novalidate><!-- formulario de envio -->
-    <div id ="datosComprador">
-      <h4>Datos del comprador:</h4><br> 
-      <input type="text" size="" class="form-control" placeholder="Nombre" required ><br>
+  <div class="row">
+    <table class="totalTable col-6">
+      <thead>
+        <tr>
+          <th class="carTable">Precio total sin envío</th>
+          <th class="carTable">Precio del envío</th>
+          <th class="carTable">Precio total con envío</th>
+        </tr>
+      </thead>
+      <tbody class="carTable" id="totalEnvio"></tbody>
+    </table>
+  </div>
+  <br><br><br>
+  <div class="row">
+    <div class="col-4"></div>
+    <button id="btnPago" class="btn btn-block btn-secondary col-4" data-toggle="modal" data-target="#modalPagar"
+      width="50%">Elegir método de pago</button>
+  </div>
+  <!-- formulario de envio -->
+  <form id="datosEnvio" action ="" novalidate><!-- ATRIBUTOS IMPORTANTES -->
+    <div id="datosComprador"><br><br><br><br>
+      <h4 class="Title">Datos del comprador:</h4><br>
+      <input  type="text"  class="form-control" placeholder="Nombre" required><br><!-- INPUTS -->
       <input type="text" class="form-control" placeholder="Apellido" required><br>
       <input type="text" class="form-control" placeholder="País" required><br>
       <input type="text" class="form-control" placeholder="Calle" required><br>
-      <input type="number" class="form-control" placeholder="Número" required><br>
+      <input type="number" class="form-control" placeholder="Número de puerta" required><br>
       <input type="text" class="form-control" placeholder="Esquina" required><br>
       <br>
     </div>
-    <div id = "divEnvio">
+    <div id="divEnvio">
       <h4>Selecciona el tipo de envío</h4><br>
 
       <input type="radio" id="Premium" name="envio" value="15" checked="" required>
@@ -111,52 +119,57 @@
       <input type="radio" id="Standard" name="envio" value="5" required>
       <label for="Standard">Standard 12-15 días</label><br><br><br>
     </div>
-    <button class="btn btn-block btn-secondary"  data-toggle="modal" data-target="#modalPagar" width="50%">Elegir método de
-      pago</button>
-    <input class="btn btn-block btn-primary data-toggle=" id = "submit" type="submit" value = "Confirmar compra" id="submit">
+    <div class="row">
+      <div class="col-4"></div>
+      <input class="btn btn-block btn-primary col-4" type="submit"  value="Confirmar Compra">
+    </div>
   </form>
-  
-    
- <!-- MODAL INICIO -->
-  
+
+  <!-- MODAL INICIO -->
+
   <div class="modal fade" id="modalPagar">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">¿Cómo quieres pagar?</h5>
         </div>
         <div class="modal-body">
-          <form id="modalPago" novalidate>  <!--formulario del MODAL-->   
+          <!--formulario del MODAL-->
+          <form id="modalPago" novalidate>
             <div>
               <h5 class="modal-title">Ingresa los datos a continuacion</h5><br>
 
-              <input id = "validTransfer" type="radio" name="metodosDePago" value="transferencia">
+              <input id="validTransfer" type="radio" name="metodosDePago" value="transferencia" checked>
               <label for="transferencia">Transferencia bancaria</label><br>
-              <div id="transferencia"><!--TRANSFERENCIA BANCARIA-->                
+              <div id="transferencia">
+                <!--TRANSFERENCIA BANCARIA-->
                 <select name="" id="bancos">
                   <option value="default">Seleccionar banco</option>
                   <option value="BSE">BROU</option>
                   <option value="Santander">Santander</option>
                 </select><br><br>
-                <input type="number" id = "numeroCuenta" name="numeroCuenta" placeholder="Escribe el numero de cuenta" class="form-control">
+                <input type="number" id="numeroCuenta" name="numeroCuenta" placeholder="Escribe el numero de cuenta"
+                  class="form-control">
               </div><br>
 
-              <input id = "validDebit" type="radio" name="metodosDePago" value="debito" required>
-                <label for="debito">Tarjeta de débito</label>
+              <input id="validDebit" type="radio" name="metodosDePago" value="debito" required>
+              <label for="debito">Tarjeta de débito</label>
 
-              <div id="debito"><!--DEBITO-->
+              <div id="debito">
+                <!--DEBITO-->
                 <input type="number" id="numeroTarjetaDeb" placeholder="Escribe el numero de la tarjeta"
                   class="form-control" required><br>
-                  <input type="number" id="codigoTarjetaDeb" placeholder="Escribe el codigo de seguridad"
-                class="form-control" required><br>
+                <input type="number" id="codigoTarjetaDeb" placeholder="Escribe el codigo de seguridad"
+                  class="form-control" required><br>
               </div><br>
 
-              <input id = "validCredit" type="radio" name="metodosDePago" value="credito" checked>
+              <input id="validCredit" type="radio" name="metodosDePago" value="credito">
               <label for="credito">Tarjeta de crédito</label><br>
-              <div id="credito"> <!--CREDITO-->
+              <div id="credito">
+                <!--CREDITO-->
                 <input type="number" id="codigoTarjetaCred" placeholder="Escribe el numero de la tarjeta"
-                class="form-control" required><br>
+                  class="form-control" required><br>
                 <input type="number" id="numeroTarjetaCred" placeholder="Escribe el codigo de seguridad"
-                class="form-control" required><br>
+                  class="form-control" required><br>
                 <select name="" id="cuotas">
                   <option value="default">Elige la cantidad de cuotas</option>
                   <option value="6">6</option>
@@ -167,18 +180,32 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" id = "btnPago" class="btn btn-block btn-success">Aceptar</button>
+              <button type="button" id="btnConfirm" class="btn btn-block btn-success" data-dismiss="modal">Aceptar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-  </div>  <!--MODAL FINAL-->
+  </div>
+  <!--MODAL FINAL-->
   <br><br>
-  
+
   <br><br>
   </div>
+  <div id="success" class="d-none alert alert-success alert-dismissible"><!-- CODIGO VISUAL -->
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Su compra ha sido confirmada</strong>
+  </div>
+  <div id="modalMssg" class="d-none alert alert-danger alert-dismissible"><!-- CODIGO VISUAL -->
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Elige el método de pago</strong>
+  </div>
+  <div id="dataMssg" class="d-none alert alert-danger alert-dismissible"><!-- CODIGO VISUAL -->
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Debes completar los datos para el envío</strong>
+  </div>
+</div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
